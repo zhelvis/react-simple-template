@@ -2,7 +2,7 @@
 
 Minimal workflow template for react apps using webpack 4 + babel + express
 
-## dependence
+## dependences
 
  - Node.js
  - npm
