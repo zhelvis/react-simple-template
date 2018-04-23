@@ -1,5 +1,5 @@
 {
-  "name": "react-simple-temp",
+  "name": "react-simple-template",
   "version": "1.0.0",
   "description": "minimal template for react apps",
   "author": "Vladimir Zhelvis <warlock1607>",
@@ -39,5 +39,20 @@
     "nodemon": "^1.17.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warlock1607/react-simple-template.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "nodejs",
+    "express",
+    "babel"
+  ],
+  "bugs": {
+    "url": "https://github.com/warlock1607/react-simple-template/issues"
+  },
+  "homepage": "https://github.com/warlock1607/react-simple-template#readme"
 }
