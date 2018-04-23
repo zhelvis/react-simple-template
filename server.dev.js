@@ -5,16 +5,11 @@ const webpackHotMiddleware = require( 'webpack-hot-middleware');
 
 const app = express();
 const port = require('./config.js').dev_port;
-const config = require('./webpack.config.dev.js');
-const options = {
-    contentBase: './dist',
-    hot: true,
-    host: 'localhost'
-};
-const compiler = webpack(config);
+const wpConfig = require('./webpack.config.dev.js');
+const compiler = webpack(wpConfig);
 
 app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
+    publicPath: wpConfig.output.publicPath
 }));
 
 app.use(webpackHotMiddleware(compiler, {

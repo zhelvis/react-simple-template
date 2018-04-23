@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-const title = 'hello';
+const title = 'hi';
 
 ReactDOM.render(
 <div>{title}</div>,
