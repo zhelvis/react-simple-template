@@ -1,11 +1,13 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const appPort = require('./config').dev_port;
+const port = require('./config').dev_port;
 
 module.exports = {
+    mode: 'development',
     entry: [
         'babel-polyfill',
-        'react-hot-loader/patch',
+        'webpack/hot/dev-server',
+        'webpack-hot-middleware/client',
         './src/index.js'
     ],
     module: {
@@ -34,13 +36,5 @@ module.exports = {
         path: __dirname + '/dist',
         publicPath: '/',
         filename: 'bundle.js'
-    },
-    devServer: {
-        port: appPort,
-        clientLogLevel: "error",
-        contentBase: "dist",
-        compress: true,
-        hot: true,
-        noInfo: true
     }
 };

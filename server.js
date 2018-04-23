@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const app = express();
-const appPort = require('./config').port;
+const port = require('./config').port;
 
 app.use(
     express.static(__dirname + '/dist'),
@@ -12,6 +13,6 @@ app.get('/', function (req, res) {
     res.send('index');
 });
 
-app.listen(appPort, function () {
-    console.log('Example app listening on port ' + appPort);
+app.listen(port, function () {
+    console.log('Example app listening on port ' + port + '\n');
 });
