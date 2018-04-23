@@ -9,17 +9,9 @@ Minimal workflow template for react apps using webpack 4 + babel + express
 
 ## Instalation
 
-
-
-     npm i react-simple-template
-
-
-  or
-
     git clone https://github.com/warlock1607/react-simple-template.git myapp
     cd myapp/
     npm i
-
 
 ## Usage
 
