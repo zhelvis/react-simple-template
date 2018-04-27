@@ -13,4 +13,4 @@ render((
     </React.Fragment>
 ), document.getElementById('root'))
 
-//module.hot.accept(); // hot reloading for dev
+module.hot.accept(); // hot reloading for dev
