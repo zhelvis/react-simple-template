@@ -1,0 +1,19 @@
+.header{
+    margin: 0;
+    padding: 0 10% 0 10%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c9c9c9;
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+}
+
+.social a{
+    margin: 0 0 0 10px;
+}

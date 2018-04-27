@@ -5,12 +5,15 @@ const webpackHotMiddleware = require( 'webpack-hot-middleware');
 
 const app = express();
 const port = require('./config.js').dev_port;
+const apiUrl = require('./config.js').api_url;
 const wpConfig = require('./webpack.config.dev.js');
 const compiler = webpack(wpConfig);
 
 app.use(webpackDevMiddleware(compiler, {
     publicPath: wpConfig.output.publicPath
 }));
+
+app.use(apiUrl, require('./app/converter'));
 
 app.use(webpackHotMiddleware(compiler, {
     log: console.log

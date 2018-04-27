@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+
 import './index.css';
 
-const title = 'hi';
+import Main from './components/Main/Main'
+import Header from './components/Header/Header'
 
-ReactDOM.render(
-<div>{title}</div>,
-document.getElementById('root')
-);
+render((
+    <React.Fragment>
+        <Header/>
+        <Main/>
+    </React.Fragment>
+), document.getElementById('root'))
 
-module.hot.accept(); // hot reloading for dev
+//module.hot.accept(); // hot reloading for dev
