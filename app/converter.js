@@ -11,7 +11,6 @@ router.post('/converter', function (req, res) {
     try{
         output = babel.transform(req.body.code, { presets: ['es2015',"react", "stage-2"] }).code;
     }catch(err){
-        console.log(err);
         output = err.message;
     }
     res.send(output);

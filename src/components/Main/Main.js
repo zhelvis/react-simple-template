@@ -16,16 +16,12 @@ axios.defaults.baseURL = 'http://localhost:8000'+ apiUrl;
 
 export default class Main extends Component{
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            input: "// Input",
-            output: "// Output"
-        };
-        this.updateCode = this.updateCode.bind(this);
+    state = {
+        input: "// Input",
+        output: "// Output"
     }
 
-    async updateCode(newCode) {
+    updateCode = async (newCode) => {
         await axios.post('/converter',{ code: newCode })
             .then(res => {
                 this.setState({
