@@ -1,3 +1,5 @@
+#!/usr/bin/env node --harmony
+
 const fs = require('fs');
 const path = require('path');
 
