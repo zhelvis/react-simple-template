@@ -5,7 +5,7 @@ const path = require('path');
 
 
 var dist = `${process.cwd()}/${process.argv[2]}`;
-var src = `./temp`;
+var src = `${path.dirname(process.argv[1])}/temp`;
 
 /**
  * Copypaste all files from src dir to dist
