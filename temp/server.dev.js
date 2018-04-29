@@ -5,7 +5,7 @@ const webpackHotMiddleware = require( 'webpack-hot-middleware');
 
 const app = express();
 const port = require('./config.js').dev_port;
-const wpConfig = require('../webpack.config.dev.js');
+const wpConfig = require('./webpack.config.dev.js');
 const compiler = webpack(wpConfig);
 
 app.use(webpackDevMiddleware(compiler, {
