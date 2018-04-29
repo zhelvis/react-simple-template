@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 
-var dist = path.join(process.cwd(), process.argv[2]);
-var src = path.join(__dirname, 'temp' );
+let dist = path.join(process.cwd(), process.argv[2]);
+let src = path.join(__dirname, 'temp' );
 
 /**
  * Copypaste all files from src dir to dist
@@ -20,7 +20,7 @@ function generateTemp(src, dist) {
 
         files.forEach(function(item){
 
-            var file = `${src}/${item}`;
+            var file = path.join(src, item);
 
             fs.stat(file, function() {
                 return function(err, stats) {
@@ -29,16 +29,16 @@ function generateTemp(src, dist) {
                     if ( stats.isFile() ){
                         fs.readFile(file, function(err, data){
                             if (err) throw err;
-                            fs.writeFile(`${dist}/${item}`, data, function(err){
+                            fs.writeFile(path.join(dist, item), data, function(err){
                                 if (err) throw err;
-                                console.log(`generate ${dist}/${item}`);
+                                console.log(`generate ${path.join(dist, item)}`);
                             });
                         });
                     }
                     if ( stats.isDirectory() ){
-                        fs.mkdir(`${dist}/${item}`,function(err){
+                        fs.mkdir(path.join(dist, item),function(err){
                             if (err) throw err;
-                            generateTemp(file, `${dist}/${item}`);
+                            generateTemp(file, path.join(dist, item));
                         });
                     }
                 }
