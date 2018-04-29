@@ -1,14 +1,13 @@
 {
   "name": "react-simple-template",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "template generator for react apps",
   "author": "Vladimir Zhelvis <warlock1607>",
   "license": "ISC",
   "main": "server.js",
   "preferGlobal": true,
   "bin": {
-    "simple": "generator.js",
-    "test": "generator.js"
+    "simple": "generator.js"
   },
   "repository": {
     "type": "git",

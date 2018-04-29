@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 
-var dist = `${process.cwd()}/${process.argv[2]}`;
-var src = `${path.dirname(process.argv[1])}/temp`;
+var dist = path.join(process.cwd(), process.argv[2]);
+var src = path.join(__dirname, 'temp' );
 
 /**
  * Copypaste all files from src dir to dist
