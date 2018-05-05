@@ -9,6 +9,9 @@
   "bin": {
     "simple": "generator.js"
   },
+  "scripts": {
+    "test": "simple myapp"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/warlock1607/react-simple-template.git"
