@@ -6,56 +6,58 @@
 const fs = require('fs');
 const path = require('path');
 
+process.on('exit', function(code){
+    console.log(`Exit with code: ${code}`);
+});
 
-let dist = path.join(process.cwd(), process.argv[2]);
-let src = path.join(__dirname, 'temp' );
 
-/**
- * Copypaste all files from src dir to dist
- * @param src -- location of template
- * @param dist -- dir to load
- */
+const dist = path.join(process.cwd(), process.argv[2]);
+const src = path.join(__dirname, 'temp' );
 
-function generateTemp(src, dist) {
-    fs.readdir(src, function(err, files){
 
-        if (err) throw err;
 
-        files.forEach(function(item){
+function startFileFlow(src, dist) {
+    let files = fs.readdirSync(src);
+    files.forEach( item => {
+        let file = path.join(src, item);
+        let stats = fs.statSync(file);
+        if (stats.isFile()) {
+            let buffer = fs.readFileSync(file);
+            console.log(`Generate file "${path.join(dist, item)}"`);
+            fs.writeFileSync(path.join(dist, item), buffer);
+        }
+        if (stats.isDirectory()) {
+            if( item !== process.argv[2]){
+                console.log(`Generate folder "${path.join(dist, item)}"`);
+                fs.mkdirSync(path.join(dist, item));
+                startFileFlow(file,path.join(dist, item))
+            };
+        };
+    });
+}
 
-            var file = path.join(src, item);
-
-            fs.stat(file, function() {
-                return function(err, stats) {
-                    if (err) throw err;
-
-                    if ( stats.isFile() ){
-                        fs.readFile(file, function(err, data){
-                            if (err) throw err;
-                            fs.writeFile(path.join(dist, item), data, function(err){
-                                if (err) throw err;
-                                console.log(`generate ${path.join(dist, item)}`);
-                            });
-                        });
-                    }
-                    if ( stats.isDirectory() ){
-                        fs.mkdir(path.join(dist, item),function(err){
-                            if (err) throw err;
-                            generateTemp(file, path.join(dist, item));
-                        });
-                    }
-                }
-            }(file));
-
+function createFolder(dist, name_of_dist){
+    return new Promise((resolve, reject) => {
+        fs.mkdir(dist, err => {
+            if (!err){
+                console.log( `Create "${name_of_dist}"...` );
+                resolve();
+            }else{
+                console.log( `"${name_of_dist}" is already exist. Try other name of the folder or delete it` );
+                reject(err);
+            };
         });
     });
-};
+}
 
-/**
- * Create dir and start loading
- */
 
-fs.mkdir(dist,function(err){
-    if (err) throw err;
-    generateTemp(src, dist);
-});
+createFolder(dist, process.argv[2])
+    .then(() => {
+        startFileFlow(src,dist);
+    })
+    .catch( err => {
+        process.exit(1);
+    })
+
+
+
