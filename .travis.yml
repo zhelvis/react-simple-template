@@ -1,3 +1,5 @@
 language: node_js
-before_install:
+install:
 - npm install -g react-simple-template
+script:
+- simple myapp
