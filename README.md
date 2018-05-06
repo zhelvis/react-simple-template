@@ -1,5 +1,7 @@
 # React-simple-template
 
+[![Build Status](https://travis-ci.org/warlock1607/react-simple-template.svg?branch=master)](https://travis-ci.org/warlock1607/react-simple-template)
+
 minimal workflow generator for react apps
 
 ## Instalation
