@@ -7,11 +7,19 @@ minimal workflow generator for react apps
 ## Instalation
 
     npm i react-simple-template -g
-    simple myapp
-    cd myapp
-    npm i
 
 ## Usage
+
+generate template
+
+    simple myapp
+    
+go to generated app folder
+
+    cd myapp
+install dependences
+
+    npm i
 
 start dev-server:
 
