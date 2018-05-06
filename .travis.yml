@@ -9,5 +9,3 @@ node_js:
   - "6"
 install:
   - npm install -g react-simple-template
-script:
-  - simple myapp
