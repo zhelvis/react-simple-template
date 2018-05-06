@@ -10,7 +10,7 @@
     "simple": "generator.js"
   },
   "scripts": {
-    "test": "simple myapp && cd myapp && npm i"
+    "test": "simple myapp && cd myapp && npm i && npm run build && npm start"
   },
   "repository": {
     "type": "git",
