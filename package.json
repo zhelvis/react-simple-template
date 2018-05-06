@@ -1,0 +1,30 @@
+{
+  "name": "react-simple-template",
+  "version": "2.1.7",
+  "description": "workflow generator for react apps",
+  "author": "Vladimir Zhelvis <warlock1607>",
+  "license": "MIT",
+  "main": "server.js",
+  "preferGlobal": true,
+  "bin": {
+    "simple": "generator.js"
+  },
+  "scripts": {
+    "test": "simple myapp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warlock1607/react-simple-template.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "nodejs",
+    "express",
+    "babel"
+  ],
+  "bugs": {
+    "url": "https://github.com/warlock1607/react-simple-template/issues"
+  },
+  "homepage": "https://github.com/warlock1607/react-simple-template#readme"
+}
