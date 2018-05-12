@@ -1,6 +1,8 @@
 # React-simple-template
 
 [![Build Status](https://travis-ci.org/warlock1607/react-simple-template.svg?branch=master)](https://travis-ci.org/warlock1607/react-simple-template)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
 minimal workflow generator for react apps
 
