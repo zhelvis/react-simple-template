@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+
+/* коммент */
 import * as path from 'path';
 import PromiseFs from './PromiseFs';
 
